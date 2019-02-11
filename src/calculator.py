@@ -1,7 +1,7 @@
 import re
 
 
-class NNCalculator:
+class Calculator:
         letter = 0
         splitter = 0
         finalValue = 0
@@ -18,41 +18,41 @@ class NNCalculator:
         MST_ELEV = 11
         MST_TWNT = 22
 
-        def __init__(self, value):
+        def set_value(self, value):
             self.initValue = value
-            self.calculateValue()
+            self.calculate()
 
-        def getVowelCount(self):
+        def get_vowel_count(self):
             vows = re.sub(r'[^aeiou]', '', self.initValue)
             return len(vows)
 
-        def getConsCount(self):
+        def get_cons_count(self):
             vows = re.sub(r'[^bcdfghjklmnpqrstvwxyz]', '', self.initValue)
             return len(vows)
 
-        def getTotalValue(self):
+        def get_total_value(self):
             return len(self.initValue)
 
-        def getLetterCount(self):
+        def getLetter_count(self):
             return len(self.initValue)
 
-        def getCharacteristics(self):
+        def get_characteristics(self):
             return self.reducer(self.totalValue)
 
-        def getRulingNumber(self):
+        def get_nuling_number(self):
             return self.reducer(self.totalValue)
 
-        def getBehaviour(self):
+        def get_behaviour(self):
             return self.reducer(self.outterExpression)
 
-        def getOutterExpression(self):
+        def get_outter_expression(self):
             return self.reducer(self.outterExpression)
 
-        def getSoulUrge(self):
+        def get_soul_urge(self):
             finalValue = self.reducer(self.soulUrge)
             return finalValue.getfinalResult
 
-        def char_to_num(letter):
+        def char_to_num(self, letter):
             alpha = '#abcdefghijklmnopqrstuvwxyz'
             pos = alpha.index(letter)
             if pos % 11 == 0:
@@ -61,10 +61,10 @@ class NNCalculator:
                 return 9
             return pos % 9
 
-        def isvowel(char):
+        def isvowel(self, char):
             return char in ('a', 'e', 'i', 'o', 'u')
 
-        def get_pos_nums(num):
+        def get_pos_nums(self, num):
             pos_nums = []
             while num != 0:
                 pos_nums.append(num % 10)
@@ -87,7 +87,7 @@ class NNCalculator:
                 htu = self.get_pos_nums(num)
             return total
 
-        def calculateValue(self):
+        def calculate(self):
             for c in self.initValue:
                 if (self.isvowel(c)):
                     self.soulUrge += self.char_to_num(c)

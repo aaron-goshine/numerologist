@@ -1,7 +1,8 @@
 import json
+import os
 
 
-class DataNumber:
+class DataMaps:
     number_names = {
         1: "one",
         2: "three",
@@ -18,14 +19,26 @@ class DataNumber:
 
     def __init__(self):
 
-        self.dictionary = json.load(open('./assets/dictionary-lc.json', 'r'))
-        self.behaviour = json.load(open('./data/behaviour.json', 'r'))
-        self.characteristics = json.load(open('./data/characteristics.json', 'r'))
+        print(os.path.abspath('.'))
+        self.behaviour = json.load(open(
+            './data/behaviour.json', 'r'))
+
+        self.characteristics = json.load(open(
+            './data/characteristics.json', 'r'))
+
         self.dream = json.load(open('./data/dream.json', 'r'))
-        self.expressions = json.load(open('./data/expressions.json', 'r'))
-        self.outterexpression = json.load(open('./data/outterexpression.json', 'r'))
-        self.rulingnumber = json.load(open('./data/rulingnumber.json', 'r'))
-        self.soulurge = json.load(open('./data/soulurge.json', 'r'))
+
+        self.expressions = json.load(open(
+            './data/expressions.json', 'r'))
+
+        self.outterexpression = json.load(open(
+            './data/outterexpression.json', 'r'))
+
+        self.rulingnumber = json.load(open(
+            './data/rulingnumber.json', 'r'))
+
+        self.soulurge = json.load(open(
+            './data/soulurge.json', 'r'))
 
     def get_behaviour(self, num):
         num_name = self.number_names[num]
