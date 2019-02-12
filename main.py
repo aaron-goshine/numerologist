@@ -22,10 +22,18 @@ class Main  ():
             self.cal.set_value(name)
             outexpr = self.cal.get_outter_expression()
             behaviour = self.cal.get_behaviour()
-
-            print(self.data_maps.get_outer_expression(outexpr))
-            print('---------------')
-            print(self.data_maps.get_behaviour(behaviour))
+            print(outexpr)
+            print(behaviour)
+            # print(self.data_maps.get_outer_expression(outexpr))
+            # print('---------------')
+            # print(self.data_maps.get_soul_urge(behaviour))
+            # print('---------------')
+            # print(self.data_maps.get_behaviour(behaviour))
+            # print('---------------')
+            # print(self.data_maps.get_expressions(behaviour))
+            # print('---------------')
+            # print(self.data_maps.ruling_number(behaviour))
+            # print('---------------')
 
             ans = str.strip(str(input('Continue [y/n]?:')))
 
