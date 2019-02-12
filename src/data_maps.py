@@ -31,13 +31,13 @@ class DataMaps:
         self.expressions = json.load(open(
             './data/expressions.json', 'r'))
 
-        self.outterexpression = json.load(open(
+        self.outter_expression = json.load(open(
             './data/outterexpression.json', 'r'))
 
-        self.rulingnumber = json.load(open(
+        self.ruling_number = json.load(open(
             './data/rulingnumber.json', 'r'))
 
-        self.soulurge = json.load(open(
+        self.soul_urge = json.load(open(
             './data/soulurge.json', 'r'))
 
     def get_behaviour(self, num):
@@ -56,14 +56,14 @@ class DataMaps:
         num_name = self.number_names[num]
         return self.expressions[num_name]
 
-    def get_outerexpression(self, num):
+    def get_outer_expression(self, num):
         num_name = self.number_names[num]
-        return self.outterexpression[num_name]
+        return self.outter_expression[num_name]
 
-    def get_rulingnumber(self, num):
+    def get_ruling_number(self, num):
         num_name = self.number_names[num]
         return self.rulingnumber[num_name]
 
-    def get_soulurge(self, num):
+    def get_soul_urge(self, num):
         num_name = self.number_names[num]
-        return self.soulurge[num_name]
+        return self.soul_urge[num_name]

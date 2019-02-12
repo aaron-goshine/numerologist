@@ -15,35 +15,21 @@ class Main  ():
     def calculateValue(self):
         print('done')
 
-    def char_dataEvent(self):
-        print('done')
-
-    def ruling_dataEvent(self):
-        print('done')
-
-    def soulurge_dataEvent(self):
-        print('done')
-
-    def outerexpression_dataEvent(self):
-        print('done')
-
-    def dataEvent(self):
-        print('done')
-
-    def results_bts_click(self):
-        print('done')
-
     def run(self):
         running = True
         while running:
             name = str.strip(str(input('Name? :')))
             self.cal.set_value(name)
-            number = self.cal.get_total_value()
-            print(number)
+            outexpr = self.cal.get_outter_expression()
+            behaviour = self.cal.get_behaviour()
+
+            print(self.data_maps.get_outer_expression(outexpr))
+            print('---------------')
+            print(self.data_maps.get_behaviour(behaviour))
 
             ans = str.strip(str(input('Continue [y/n]?:')))
 
-            if ans == 'y':
+            if ans == 'n':
                 running = False
 
         print('done')
