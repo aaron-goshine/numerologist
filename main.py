@@ -21,26 +21,24 @@ class Main  ():
             name = str.strip(str(input('Name? :')))
             self.cal.set_value(name)
             outexpr = self.cal.get_outter_expression()
-            behaviour = self.cal.get_behaviour()
-            print(outexpr)
-            print(behaviour)
-            # print(self.data_maps.get_outer_expression(outexpr))
-            # print('---------------')
-            # print(self.data_maps.get_soul_urge(behaviour))
-            # print('---------------')
-            # print(self.data_maps.get_behaviour(behaviour))
-            # print('---------------')
-            # print(self.data_maps.get_expressions(behaviour))
-            # print('---------------')
-            # print(self.data_maps.ruling_number(behaviour))
-            # print('---------------')
+            soul = self.cal.get_soul_urge()
+            print('---------------')
+            print(self.data_maps.get_vidic(outexpr))
+            print('---------------')
+            print(self.data_maps.get_behaviour(outexpr))
+            print('---------------')
+            print(self.data_maps.get_expressions(outexpr))
+            print('---------------')
+            print(self.data_maps.get_soul_urge(soul))
+            print('---------------')
 
             ans = str.strip(str(input('Continue [y/n]?:')))
 
             if ans == 'n':
                 running = False
+                print('done')
 
-        print('done')
+            self.cal = Calculator()
 
 
 if __name__ == '__main__':

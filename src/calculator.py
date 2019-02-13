@@ -1,4 +1,5 @@
 import re
+from .translator import Translator
 
 
 class Calculator:
@@ -8,15 +9,15 @@ class Calculator:
     soul_urge = 0
 
     def set_value(self, value):
-        self.init_value = value
+        self.string_value = value
         self.calculate()
 
     def get_vowel_count(self):
-        vows = re.sub(r'[^aeiou]', '', self.init_value)
+        vows = re.sub(r'[^aeiou]', '', self.string_value)
         return len(vows)
 
     def get_cons_count(self):
-        vows = re.sub(r'[^bcdfghjklmnpqrstvwxyz]', '', self.init_value)
+        vows = re.sub(r'[^bcdfghjklmnpqrstvwxyz]', '', self.string_value)
         return len(vows)
 
     def get_total_value(self):
@@ -35,8 +36,7 @@ class Calculator:
         return self.reducer(self.outter_expression)
 
     def get_soul_urge(self):
-        final_value = self.reducer(self.soul_urge)
-        return final_value.getfinal_result
+        return self.reducer(self.soul_urge)
 
     def char_to_num(self, letter):
         alpha = '#abcdefghijklmnopqrstuvwxyz'
@@ -74,7 +74,8 @@ class Calculator:
         return total
 
     def calculate(self):
-        for c in self.init_value:
+        string_value = Translator.clean_string(self.string_value)
+        for c in string_value:
             if (self.isvowel(c)):
                 self.soul_urge += self.char_to_num(c)
             else:

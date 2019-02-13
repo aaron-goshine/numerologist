@@ -40,9 +40,22 @@ class DataMaps:
         self.soul_urge = json.load(open(
             './data/soulurge.json', 'r'))
 
+        self.vidic = json.load(open(
+            './data/vidic.json', 'r'))
+
     def get_behaviour(self, num):
         num_name = self.number_names[num]
         return self.behaviour[num_name]
+
+    def get_vidic(self, num):
+        if num == 22:
+            num = 4
+
+        if num == 11:
+            num = 2
+
+        num_name = self.number_names[num]
+        return self.vidic[num_name]
 
     def get_characteristic(self, num):
         num_name = self.number_names[num]
